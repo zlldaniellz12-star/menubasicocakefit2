@@ -141,7 +141,8 @@
 .card:hover{
       transform: translateY(-2px);
       box-shadow:0 18px 40px rgba(0,0,0,.12);
-      
+    }
+
     .card .name{
       padding:6px 8px 6px;
       font-weight:850;
@@ -414,7 +415,7 @@
 
       /* Título más manejable */
       .title{
-        font-size:34px;
+        font-size:25px;
         letter-spacing:.3px;
       }
       .hint{ margin-bottom:4px; }
@@ -621,7 +622,7 @@
         <div class="right">
           <div class="priceTag" id="sumPrice">$0.00</div>
           <button class="btn" id="openBtn" disabled>Ver detalles</button>
-          <a class='volver' href='/'>← Volver al inicio</a>
+          <a class='volver' href='index.html'>← Volver al inicio</a>
         </div>
       </div>
 
@@ -1097,43 +1098,20 @@ function whatsappText(){
   const price = fmt(priceWithAlmendra(cake, sizeKey));
 
   // WhatsApp "bold" uses *texto*
-  return `*MI PEDIDO SERÍA EL SIGUIENTE*
+  const flags = [
+    "- Sin gluten",
+    "- Sin azúcar",
+    cake.category==="sin" ? "- Sin lácteos" : "- Con lácteos"
+  ].join("\n");
 
-` +
-         `*Tamaño:* ${sizeLabel}
-` +
-         `*Bizcocho de:* ${cake.name}
-` +
-         `*Harina de:* ${niceValue(flourLabel(cake))}
-` +
-         `*Relleno con:* (por definir)
-` +
-         `*Cubierto con:* (por definir)
-` +
-         `*Decorado:* (por definir)
-
-` +
-         `- Sin gluten
-` +
-         `- Sin azúcar
-` +
-         `- Sin lácteos (SI CUMPLE)
-` +
-         `- Con lácteos (SI CUMPLE)
-
-` +
-         `*Valor:* $${price}`;
+  return `*MI PEDIDO SERÍA EL SIGUIENTE*\n\n` +
+         `*Tamaño:* ${sizeLabel}\n` +
+         `*Bizcocho de:* ${cake.name}\n` +
+         `*Harina de:* ${niceValue(flourLabel(cake))}\n` +
+         `*Precio:* $${price}\n\n` +
+         `*Descripción:*\n${cake.desc}\n\n` +
+         `${flags}`;
 }
-return `*MI PEDIDO SERÍA EL SIGUIENTE*
-
-*Tamaño:* ${sizeLabel}
-*Categoría:* ${categoryLabel(cake.category)}
-*Precio:* $${price}
-
-*Descripción:*
-${cake.desc}
-`;
-
 async function shareCurrentImage(){
   const cake = getCakeById(selectedId);
   if(!cake) return;
