@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cake Fit | Opciones</title>
+
+<style>
+:root{
+  --verde:#0b7a44;
+  --verde-oscuro:#065a31;
+  --dorado:#d4af37;
+  --gris:#5f6f66;
+  --fondo:#f3faf6;
+}
+
+body{
+  margin:0;
+  font-family: ui-sans-serif, system-ui, "Segoe UI", Roboto;
+  background:linear-gradient(180deg,var(--fondo),#ffffff);
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:20px;
+}
+
+.card{
+  background:white;
+  width:100%;
+  max-width:420px;
+  border-radius:24px;
+  padding:40px 30px;
+  text-align:center;
+  box-shadow:0 20px 40px rgba(0,0,0,.12);
+}
+
+h1{
+  color:var(--verde);
+  margin-bottom:30px;
+}
+
+.options{
+  display:grid;
+  gap:18px;
+}
+
+.btn{
+  padding:18px;
+  border-radius:18px;
+  font-weight:800;
+  cursor:pointer;
+  color:white;
+  font-size:15px;
+  transition:.3s;
+}
+
+.btn:hover{
+  transform:translateY(-3px);
+}
+
+.personalizar{
+  background:linear-gradient(135deg,var(--verde),var(--verde-oscuro));
+}
+
+.delivery{
+  background:linear-gradient(135deg,#158a4f,#0d5b33);
+}
+
+.vitrina{
+  background:linear-gradient(135deg,var(--dorado),#e9c86a);
+}
+
+.volver{
+  margin-top:25px;
+  font-size:13px;
+  color:var(--gris);
+  cursor:pointer;
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+
+  <h1>Más opciones</h1>
+
+  <div class="options">
+    <div class="btn personalizar" onclick="location.href='personalizado.html'">
+      🎂 Personalizar mi cake
+    </div>
+
+    <div class="btn delivery" onclick="location.href='delivery-cotizacion.html'">
+      🚚 Calcular delivery
+    </div>
+
+    <div class="btn vitrina" onclick="location.href='vitrina.html'">
+      🍰 Cake de vitrina
+    </div>
+  </div>
+
+  <a href="../index.html" class="volver">
+  ← Volver al inicio
+</a>
+
+
+</div>
+
+</body>
+</html>

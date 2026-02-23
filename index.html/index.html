@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>CAKE FIT | Inicio</title>
+
+<style>
+:root{
+  --verde:#0b7a44;
+  --verde-oscuro:#065a31;
+  --dorado:#d4af37;
+  --gris:#5f6f66;
+  --fondo:#f3faf6;
+  --glass:rgba(255,255,255,.75);
+  --sombra:0 25px 60px rgba(0,0,0,.15);
+}
+
+*{box-sizing:border-box}
+
+body{
+  margin:0;
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(11,122,68,.25), transparent 45%),
+    radial-gradient(circle at 80% 10%, rgba(212,175,55,.25), transparent 45%),
+    linear-gradient(180deg,#f6fdf9,#ffffff);
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:20px;
+}
+
+/* CARD */
+.card{
+  background:var(--glass);
+  backdrop-filter:blur(18px);
+  width:100%;
+  max-width:420px;
+  border-radius:28px;
+  padding:40px 30px;
+  text-align:center;
+  box-shadow:var(--sombra);
+  border:1px solid rgba(255,255,255,.4);
+}
+
+/* LOGO */
+.logo{
+  width:80px;
+  height:80px;
+  margin:0 auto 16px;
+  border-radius:24px;
+  background:linear-gradient(135deg,var(--verde),var(--dorado));
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  box-shadow:0 18px 35px rgba(11,122,68,.4);
+  overflow:hidden;
+}
+
+/* Imagen del logo */
+.logo img{
+  width:72%;
+  height:72%;
+  object-fit:contain;
+  display:block;
+  filter: drop-shadow(0 6px 10px rgba(0,0,0,.15));
+}
+
+h1{
+  margin:10px 0 6px;
+  color:var(--verde);
+  font-size:28px;
+}
+
+.subtitle{
+  color:var(--gris);
+  font-size:14px;
+  margin-bottom:32px;
+  line-height:1.6;
+}
+
+/* BOTONES */
+.options{
+  display:grid;
+  gap:20px;
+}
+
+.action{
+  padding:20px;
+  border-radius:22px;
+  font-size:16px;
+  font-weight:800;
+  cursor:pointer;
+  color:white;
+  transition:.3s;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:12px;
+}
+
+.menu{
+  background:linear-gradient(135deg,var(--verde),var(--verde-oscuro));
+  box-shadow:0 15px 30px rgba(11,122,68,.35);
+}
+.menu:hover{ transform:translateY(-4px); }
+
+.mas{
+  background:linear-gradient(135deg,var(--dorado),#e9c86a);
+  box-shadow:0 15px 30px rgba(212,175,55,.35);
+}
+.mas:hover{ transform:translateY(-4px); }
+
+.footer{
+  margin-top:30px;
+  font-size:12px;
+  color:var(--gris);
+}
+.footer b{ color:var(--verde); }
+</style>
+</head>
+
+<body>
+
+<div class="card">
+
+  <!-- Cambia el nombre del archivo si tu logo tiene otro nombre -->
+  <div class="logo">
+    <img src="img/logo.png" alt="Cake Fit Logo" onerror="this.style.display='none'">
+  </div>
+
+  <h1>Cake Fit</h1>
+  <p class="subtitle">
+    Pastelería saludable sin gluten y sin azúcar.
+  </p>
+
+  <div class="options">
+
+    <!-- BOTÓN 1 -->
+    <div class="action menu" onclick="location.href='interno/menu.html'">
+      🍰 Ver Menú
+    </div>
+
+    <!-- BOTÓN 2 -->
+    <div class="action mas" onclick="location.href='interno/menu2.html'">
+      ⚙ Más opciones
+    </div>
+
+  </div>
+
+  <div class="footer">
+    💚 Cake Fit · <b>Hecho con amor y conciencia</b>
+  </div>
+
+</div>
+
+</body>
+</html>
